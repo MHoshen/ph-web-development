@@ -1,33 +1,452 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Development</title>
-    <link rel="stylesheet" href="/assets/style.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li>
-                    <a href="">Modele</a>
-                    <ul class="dropdown">
-                        <li><a href="">Inner Nav1</a></li>
-                        <li><a href="">Inner Nav2</a></li>
-                        <li><a href="">Inner Nav3</a></li>
-                    </ul>
-                </li>
-                <li><a href="">Module2</a></li>
-                <li><a href="">Module3</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th><strong>Property</strong></th>
+          <th><strong>Description</strong></th>
+          <th><strong>Values</strong></th>
+          <th><strong>Value Description</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <strong><code>display</code></strong>
+          </td>
+          <td>Flexbox সক্রিয় করার জন্য ব্যবহৃত হয়।</td>
+          <td><code>flex</code>, <code>inline-flex</code></td>
+          <td>
+            <strong><code>flex</code></strong
+            >: একটি block-level container তৈরি করে। <br />
+            <strong><code>inline-flex</code></strong
+            >: একটি inline-level container তৈরি করে।
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong><code>flex-direction</code></strong>
+          </td>
+          <td>Flex items কোন direction-এ থাকবে তা নির্ধারণ করে।</td>
+          <td>
+            <code>row</code>, <code>row-reverse</code>, <code>column</code>,
+            <code>column-reverse</code>
+          </td>
+          <td>
+            <strong><code>row</code></strong
+            >: Items left-to-right। <br />
+            <strong><code>row-reverse</code></strong
+            >: Items right-to-left। <br />
+            <strong><code>column</code></strong
+            >: Items top-to-bottom। <br />
+            <strong><code>column-reverse</code></strong
+            >: Items bottom-to-top।
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong><code>justify-content</code></strong>
+          </td>
+          <td>Main axis বরাবর flex items কিভাবে align হবে তা নির্ধারণ করে।</td>
+          <td>
+            <code>flex-start</code>, <code>flex-end</code>, <code>center</code>,
+            <code>space-between</code>, <code>space-around</code>,
+            <code>space-evenly</code>
+          </td>
+          <td>
+            <strong><code>flex-start</code></strong
+            >: Items left/top। <br />
+            <strong><code>flex-end</code></strong
+            >: Items right/bottom। <br />
+            <strong><code>center</code></strong
+            >: Items center। <br />
+            <strong><code>space-between</code></strong
+            >: Items মাঝে সমান গ্যাপ। <br />
+            <strong><code>space-around</code></strong
+            >: Items চারপাশে গ্যাপ।
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong><code>align-items</code></strong>
+          </td>
+          <td>Cross axis বরাবর flex items কিভাবে align হবে তা নির্ধারণ করে।</td>
+          <td>
+            <code>flex-start</code>, <code>flex-end</code>, <code>center</code>,
+            <code>baseline</code>, <code>stretch</code>
+          </td>
+          <td>
+            <strong><code>flex-start</code></strong
+            >: Top aligned। <br />
+            <strong><code>flex-end</code></strong
+            >: Bottom aligned। <br />
+            <strong><code>center</code></strong
+            >: Centered। <br />
+            <strong><code>baseline</code></strong
+            >: Baseline-aligned। <br />
+            <strong><code>stretch</code></strong
+            >: Items fit করে।
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong><code>align-self</code></strong>
+          </td>
+          <td>
+            নির্দিষ্ট একটি flex item কিভাবে cross axis বরাবর align হবে তা
+            নির্ধারণ করে।
+          </td>
+          <td>Same as <code>align-items</code></td>
+          <td>
+            Item-specific alignment সেট করার জন্য ব্যবহৃত হয়। Default
+            <code>auto</code>, যা parent এর <code>align-items</code> inherit
+            করে।
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong><code>align-content</code></strong>
+          </td>
+          <td>
+            Multiple rows কিভাবে cross axis বরাবর align হবে তা নির্ধারণ করে।
+          </td>
+          <td>
+            <code>flex-start</code>, <code>flex-end</code>, <code>center</code>,
+            <code>space-between</code>, <code>space-around</code>,
+            <code>space-evenly</code>,
+            <code>stretch</code>
+          </td>
+          <td>
+            Similar to <code>justify-content</code>, তবে multiple rows এর জন্য।
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong><code>flex-wrap</code></strong>
+          </td>
+          <td>
+            Flex items এক লাইনে থাকবে নাকি multiple lines-এ wrap করবে তা
+            নির্ধারণ করে।
+          </td>
+          <td>
+            <code>nowrap</code>, <code>wrap</code>, <code>wrap-reverse</code>
+          </td>
+          <td>
+            <strong><code>nowrap</code></strong
+            >: All items এক লাইনে থাকবে। <br />
+            <strong><code>wrap</code></strong
+            >: Items multiple lines-এ move করবে। <br />
+            <strong><code>wrap-reverse</code></strong
+            >: Reverse order-এ wrap করবে।
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong><code>order</code></strong>
+          </td>
+          <td>Flex items-এর sequencing নির্ধারণ করে।</td>
+          <td>
+            Integer values (e.g., <code>0</code>, <code>1</code>,
+            <code>-1</code>)
+          </td>
+          <td>
+            Smaller values আগে, বড় values পরে render হয়। Default value:
+            <code>0</code>।
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong><code>flex</code></strong>
+          </td>
+          <td>
+            Flex item এর grow, shrink এবং basis কিভাবে কাজ করবে তা নির্ধারণ করে।
+          </td>
+          <td>
+            <code>none</code>, <code>auto</code>,
+            <code>[flex-grow] [flex-shrink] [flex-basis]</code>
+          </td>
+          <td>
+            <strong><code>none</code></strong
+            >: No growth/shrinkage। <br />
+            <strong><code>auto</code></strong
+            >: Fully flexible। <br />
+            Example: <code>1 1 auto</code>।
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong><code>flex-grow</code></strong>
+          </td>
+          <td>Flex item কতটুকু grow করবে তা নির্ধারণ করে।</td>
+          <td>
+            Numeric value (e.g., <code>0</code>, <code>1</code>, <code>2</code>)
+          </td>
+          <td>
+            <strong><code>0</code></strong
+            >: No growth। <br />
+            <strong>Positive value</strong>: Proportional growth।
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong><code>flex-shrink</code></strong>
+          </td>
+          <td>Flex item কতটুকু shrink করবে তা নির্ধারণ করে।</td>
+          <td>
+            Numeric value (e.g., <code>0</code>, <code>1</code>, <code>2</code>)
+          </td>
+          <td>
+            <strong><code>0</code></strong
+            >: No shrink। <br />
+            <strong>Positive value</strong>: Proportional shrink।
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong><code>flex-basis</code></strong>
+          </td>
+          <td>Flex item এর initial size নির্ধারণ করে।</td>
+          <td>
+            <code>auto</code>, length values (e.g., <code>px</code>,
+            <code>%</code>, <code>em</code>)
+          </td>
+          <td>
+            <strong><code>auto</code></strong
+            >: Content size অনুযায়ী। <br />
+            <strong>Length value</strong>: Fixed size।
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong><code>gap</code></strong>
+          </td>
+          <td>Flex items এর মধ্যে gap নির্ধারণ করে।</td>
+          <td>
+            Length values (e.g., <code>px</code>, <code>%</code>,
+            <code>em</code>)
+          </td>
+          <td>Items এর মধ্যে horizontal এবং vertical gap নির্ধারণ করে।</td>
+        </tr>
+      </tbody>
+    </table>
 
-    </main>
-    <footer>
-
-    </footer>
-</body>
+    <table>
+      <thead>
+        <tr>
+          <th><strong>Property</strong></th>
+          <th><strong>Description</strong></th>
+          <th><strong>Values</strong></th>
+          <th><strong>Value Description</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>display</code></td>
+          <td>গ্রিড সক্রিয় করার জন্য ব্যবহৃত হয়।</td>
+          <td><code>grid</code>, <code>inline-grid</code></td>
+          <td>
+            <code>grid</code>: Block-level গ্রিড কন্টেইনার।<br /><code
+              >inline-grid</code
+            >: Inline-level গ্রিড কন্টেইনার।
+          </td>
+        </tr>
+        <tr>
+          <td><code>grid-template-rows</code></td>
+          <td>গ্রিডের জন্য প্রতিটি সারির আকার নির্ধারণ করে।</td>
+          <td>
+            Length, Percentage, <code>auto</code>, <code>repeat()</code>,
+            <code>minmax()</code>
+          </td>
+          <td>
+            প্রতিটি সারির আকার যেমন <code>100px</code>, <code>1fr</code>,
+            <code>minmax(100px, auto)</code> ইত্যাদি।
+          </td>
+        </tr>
+        <tr>
+          <td><code>grid-template-columns</code></td>
+          <td>গ্রিডের জন্য প্রতিটি কলামের আকার নির্ধারণ করে।</td>
+          <td>
+            Length, Percentage, <code>auto</code>, <code>repeat()</code>,
+            <code>minmax()</code>
+          </td>
+          <td>
+            প্রতিটি কলামের আকার যেমন <code>200px</code>, <code>1fr</code>,
+            <code>minmax(200px, auto)</code> ইত্যাদি।
+          </td>
+        </tr>
+        <tr>
+          <td><code>grid-template-areas</code></td>
+          <td>গ্রিড লেআউটের জন্য নামকৃত এলাকা নির্ধারণ করে।</td>
+          <td>String values representing grid areas</td>
+          <td>
+            উদাহরণ:
+            <code>"header header" "sidebar main" "footer footer"</code>।
+          </td>
+        </tr>
+        <tr>
+          <td><code>grid-row</code></td>
+          <td>একটি আইটেম কোন গ্রিড লাইনে শুরু এবং শেষ হবে তা নির্ধারণ করে।</td>
+          <td>
+            Line number, <code>span &lt;number&gt;</code>, <code>auto</code>
+          </td>
+          <td>
+            উদাহরণ: <code>1 / 3</code>, যা গ্রিডের প্রথম লাইন থেকে শুরু করে
+            তৃতীয় লাইনে শেষ হবে।
+          </td>
+        </tr>
+        <tr>
+          <td><code>grid-column</code></td>
+          <td>একটি আইটেম কোন কলামে শুরু এবং শেষ হবে তা নির্ধারণ করে।</td>
+          <td>
+            Line number, <code>span &lt;number&gt;</code>, <code>auto</code>
+          </td>
+          <td>
+            উদাহরণ: <code>2 / 4</code>, যা গ্রিডের দ্বিতীয় থেকে চতুর্থ কলামে
+            থাকবে।
+          </td>
+        </tr>
+        <tr>
+          <td><code>gap</code></td>
+          <td>গ্রিড আইটেমগুলির মধ্যে ফাঁক নির্ধারণ করে।</td>
+          <td>
+            Length values (e.g., <code>10px</code>, <code>1em</code>,
+            <code>%</code>)
+          </td>
+          <td>সারি এবং কলামের মধ্যে ফাঁক নির্ধারণ করে।</td>
+        </tr>
+        <tr>
+          <td><code>row-gap</code></td>
+          <td>শুধুমাত্র সারির মধ্যে ফাঁক নির্ধারণ করে।</td>
+          <td>Length values (e.g., <code>10px</code>, <code>1em</code>)</td>
+          <td>সারির মধ্যে নির্দিষ্ট পরিমাণ ফাঁক।</td>
+        </tr>
+        <tr>
+          <td><code>column-gap</code></td>
+          <td>শুধুমাত্র কলামের মধ্যে ফাঁক নির্ধারণ করে।</td>
+          <td>Length values (e.g., <code>10px</code>, <code>1em</code>)</td>
+          <td>কলামের মধ্যে নির্দিষ্ট পরিমাণ ফাঁক।</td>
+        </tr>
+        <tr>
+          <td><code>justify-items</code></td>
+          <td>
+            গ্রিড আইটেমগুলো main axis বরাবর কিভাবে align হবে তা নির্ধারণ করে।
+          </td>
+          <td>
+            <code>start</code>, <code>end</code>, <code>center</code>,
+            <code>stretch</code>
+          </td>
+          <td>উদাহরণ: <code>center</code>, যা center-align করে।</td>
+        </tr>
+        <tr>
+          <td><code>align-items</code></td>
+          <td>
+            গ্রিড আইটেমগুলো cross axis বরাবর কিভাবে align হবে তা নির্ধারণ করে।
+          </td>
+          <td>
+            <code>start</code>, <code>end</code>, <code>center</code>,
+            <code>stretch</code>
+          </td>
+          <td>
+            উদাহরণ: <code>stretch</code>, যা items পুরো height নিয়ে নেবে।
+          </td>
+        </tr>
+        <tr>
+          <td><code>place-items</code></td>
+          <td>
+            <code>align-items</code> এবং <code>justify-items</code> এর shorthand
+            প্রপার্টি।
+          </td>
+          <td>
+            Combination of <code>align-items</code> এবং
+            <code>justify-items</code>
+          </td>
+          <td>
+            উদাহরণ: <code>center start</code>, যা cross axis-এ center এবং main
+            axis-এ start করে।
+          </td>
+        </tr>
+        <tr>
+          <td><code>justify-content</code></td>
+          <td>
+            পুরো গ্রিড কন্টেইনার main axis বরাবর কিভাবে align হবে তা নির্ধারণ
+            করে।
+          </td>
+          <td>
+            <code>start</code>, <code>end</code>, <code>center</code>,
+            <code>space-between</code>, <code>space-around</code>,
+            <code>space-evenly</code>
+          </td>
+          <td>
+            উদাহরণ: <code>space-between</code>, যা গ্রিড আইটেমের মাঝে সমান ফাঁক
+            তৈরি করে।
+          </td>
+        </tr>
+        <tr>
+          <td><code>align-content</code></td>
+          <td>
+            পুরো গ্রিড কন্টেইনার cross axis বরাবর কিভাবে align হবে তা নির্ধারণ
+            করে।
+          </td>
+          <td>
+            <code>start</code>, <code>end</code>, <code>center</code>,
+            <code>space-between</code>, <code>space-around</code>,
+            <code>space-evenly</code>, <code>stretch</code>
+          </td>
+          <td>উদাহরণ: <code>stretch</code>, যা পুরো height পূরণ করে।</td>
+        </tr>
+        <tr>
+          <td><code>place-content</code></td>
+          <td>
+            <code>align-content</code> এবং <code>justify-content</code> এর
+            shorthand প্রপার্টি।
+          </td>
+          <td>
+            Combination of <code>align-content</code> এবং
+            <code>justify-content</code>
+          </td>
+          <td>
+            উদাহরণ: <code>center stretch</code>, যা cross axis-এ center এবং main
+            axis-এ stretch করে।
+          </td>
+        </tr>
+        <tr>
+          <td><code>grid-auto-rows</code></td>
+          <td>অটো-জেনারেটেড সারির আকার নির্ধারণ করে।</td>
+          <td>Length, Percentage, <code>auto</code>, <code>minmax()</code></td>
+          <td>উদাহরণ: <code>minmax(100px, auto)</code>।</td>
+        </tr>
+        <tr>
+          <td><code>grid-auto-columns</code></td>
+          <td>অটো-জেনারেটেড কলামের আকার নির্ধারণ করে।</td>
+          <td>Length, Percentage, <code>auto</code>, <code>minmax()</code></td>
+          <td>উদাহরণ: <code>200px</code>।</td>
+        </tr>
+        <tr>
+          <td><code>grid-auto-flow</code></td>
+          <td>অটো-প্লেসমেন্ট এলগরিদমের জন্য নির্ধারণ করে।</td>
+          <td>
+            <code>row</code>, <code>column</code>, <code>dense</code>,
+            <code>row dense</code>, <code>column dense</code>
+          </td>
+          <td>উদাহরণ: <code>row dense</code>, যা items ঘনভাবে প্লেস করে।</td>
+        </tr>
+        <tr>
+          <td><code>z-index</code></td>
+          <td>আইটেম কোন লেয়ারে প্রদর্শিত হবে তা নির্ধারণ করে।</td>
+          <td>
+            Integer values (e.g., <code>1</code>, <code>10</code>,
+            <code>-1</code>)
+          </td>
+          <td>Positive value উপরে, Negative value নিচে দেখায়।</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
 </html>
